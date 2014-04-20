@@ -1,0 +1,249 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body{
+	min-height: 100%;
+    height: 100%;
+	background: url(texture.png) repeat;
+    background-size: 15px;
+    font-size: 13pt;
+}
+
+header{
+    box-sizing: border-box;
+	width: 100%;
+	min-width: 880px;
+	min-height: 100px;
+	background: url(head.png) repeat-x;
+    background-size: auto 100px;
+	z-index: 2;
+	position: absolute;
+	padding: 30px 0;
+    box-shadow: 0px 3px 10px black;
+}
+
+#menu a{
+	text-decoration: none;
+	font-size: 16px;
+	display:block;
+	width: 100px;
+	height: 45px;
+    color: white;
+	background: url(menuitem.png) no-repeat;
+    background-size: 100px;
+	box-shadow: 3px 3px 8px black;
+	margin: 10px;
+    margin-left: -10px;
+	text-align:center;
+	padding-top: 15px;
+	border:none;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#menu a img{
+    height: 90%;
+    margin-top: -3px;
+}
+
+#menu a:visited{
+	color: white;
+}
+
+#menu a:hover{
+	color: white;
+    padding-top: 12px;
+    height: 48px;
+}
+
+#menu{
+	position: fixed;
+	background: url(chain.png) repeat-y 30px 0;
+    background-size: 30px auto;
+	min-height: 100%;
+	z-index: 3;
+	padding-top: 150px;
+}
+
+#title{
+	position:absolute;
+	right: 30px;
+	top: 20px;
+	text-align: right;
+	font-family: "Times", Times New Roman, serif;
+	font-size: 170%;
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.5), 0 -1px 0 black;
+    color: #400;
+}
+
+#viewer{
+	top: 100px;
+	position: relative;
+	display: block;
+	width: 750px;
+	-webkit-transition: height 1s ease-in-out;
+	-moz-transition: height 1s ease-in-out;
+	-o-transition: height 1s ease-in-out;
+	transition: height 1s ease-in-out;
+	height: auto;
+	overflow: hidden;
+	margin: 0 0 50px 0;
+    padding: 0;
+	left: 150px;
+    background: rgba(200,200,200,0.9);
+    box-shadow: 0px 5px 40px rgba(0,0,0,0.7);
+}
+
+#aligner{
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 100%;
+    height: auto;
+    min-height: 100%;
+	max-width: 900px;
+    width: 100%;
+}
+
+#aligner2{
+	position: relative;
+	min-height: 100%;
+}
+
+#container{
+	-webkit-transition: margin-top 1s ease-in-out;
+	-moz-transition: margin-top 1s ease-in-out;
+	-o-transition: margin-top 1s ease-in-out;
+	transition: margin-top 1s ease-in-out;
+	margin-top: 0px;
+}
+
+.page{
+    box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: auto;
+    margin: 0px;
+    padding: 50px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.page:after{
+    clear: both;
+    content: " ";
+    display: block;
+    width: 100%;
+}
+
+.page h1{
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.page img{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+#page1 p{
+    margin-top: 25%;
+    font-size: 18pt;
+}
+
+#page1 img{
+    float: right;
+    width: 60%;
+}
+
+#page3 .person{
+    width: 100%;
+    display: block;
+    margin: 2rem 0;
+}
+
+#page3 .person:after{
+    content: " ";
+    width: 100%;
+    clear: both;
+    display: block;
+}
+
+#page3 img{
+    height: 7rem;
+    width: 7rem;
+    float: left;
+    margin-right: 2rem;
+}
+
+#page3 p{
+    margin-top: 2rem;
+}
+
+.left{
+    width: 50%;
+    float: left;
+}
+
+.right{
+    width: 50%;
+    float: right;
+}
+
+.email_form{
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 0px 0 0px;
+}
+
+.email_form form *{
+    background: white;
+    box-shadow: none;
+    border: 2px solid gray;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 5px;
+    width: 80%;
+}
+
+.email_form form textarea{
+    height: 180px;
+}
+
+.email_form form input[type='submit']{
+    width: 100px;
+    position: absolute;
+    left: 0px;
+    bottom: -40px;
+}
+
+.email_form form input[type='submit']:hover{
+    left: -1px;
+    bottom: -39px;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+}
+
+.email_form form input[type='submit']:active{
+    left: 1px;
+    bottom: -41px;
+    border-left: 3px solid gray;
+    border-top: 3px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+footer{
+    box-sizing: border-box;
+    text-align: right;
+    background: silver;
+    padding: 5px 20px;
+    position: relative;
+    top: 20px;
+    box-shadow: 0px -3px 10px black;
+}

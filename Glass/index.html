@@ -26,10 +26,18 @@
         </div>
         <div class='section' id="about">
             <h1>About Us</h1>
+            <br />
+            <div class='left about'>
+                <p>Founded in 2014, Potato SoftWorks is dedicated to bringing the best of technology to you, for a price you can afford.</p>
+                <p>Set up by two Computer Science students from Christchurch, New Zealand, we believe that any technology is just one spark of brilliance from being created.</p>
+                <p>We put our time, passion, and brilliance in to every product we sell. Let us care for your next website.</p>
+            </div>
+            <div class='right'>
+                <img class='code' src='Resources/devshot.png' />
+            </div>
         </div>
         <div class='section' id="people">
             <h1>The Nerds Involved</h1>
-            <br />
             <div class='person left'>
                 <img src='Resources/kaleb.png'>
                 <h2>Kaleb McCall</h2>
@@ -43,6 +51,34 @@
         </div>
         <div class='section' id="contact">
             <h1>Reaching Us</h1>
+            <br />
+            <div class='email_form left'>
+                <h2>Send us an Email</h2>
+                Integrated email forms: $30.
+                <form name='contact_form' method='post' action='Resources/send_email.php'>
+                    <input name='name' type='text' placeholder="Name"/>
+                    <br />
+                    <input name='email' type='text' placeholder="email@provider.com"/>
+                    <br />
+                    <textarea name='message' placeholder='Write your message here'></textarea>
+                    <br />
+                    <input type='submit' value='Send'/>
+                </form>
+            </div>
+            <div class='links right'>
+                <h2>Other options...</h2>
+                Facebook like button: $10.
+                <p>
+                    <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1443016575941912" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
+                </p>
+                Twitter Follow button: $10.
+                <p>
+                    <a href="https://twitter.com/yourcompany" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @yourcompany</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </p>
+                Send us an email the old fashioned way: <br />
+                <a href="mailto:test@123.com">you@yourcompany.com</a>
+            </div>
         </div>
         <footer>
             Website by <a href='http://www.potatosoftworks.com'>Potato SoftWorks</a>, 2014.

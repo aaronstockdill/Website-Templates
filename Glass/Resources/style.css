@@ -5,6 +5,7 @@ html, body{
     background: #ddd;
     font-size: 1.1em;
     font-family: "Helvetica Neue", Arial, Sans-serif;
+    overflow-x: hidden;
 }
 
 header{
@@ -62,9 +63,14 @@ div.section{
     display: block;
     min-height: 100%;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 3rem 0 0 0;
     position: relative;
+    max-width: 1000px;
+    border: 1px solid gray;
+    border-top: none;
+    box-shadow: 1px 1px 0px white, inset 1px 0px 0px white;
+    overflow-x: hidden;
 }
 
 div.section h1{
@@ -75,6 +81,41 @@ div.section h1{
     padding: 10px 20px 5px 100px;
     box-shadow: 3px 4px 5px rgba(0,0,0,0.3);
     font-size: 3rem;
+}
+
+div.section::after{
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1px;
+    clear: both;
+}
+
+.left{
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+}
+
+.right{
+    box-sizing: border-box;
+    float: right;
+    width: 50%;
+}
+
+.left::after, .right::after, .left::before, .right::after{
+    content: " ";
+    clear: both;
+    width: 100%;
+    height: 1px;
+    display: block;
+}
+
+
+h2{
+    font-weight: 200;
+    font-size: 2.8rem;
+    margin-top: 1rem;
 }
 
 .hero{
@@ -92,8 +133,17 @@ div.section h1{
 
 .overlay h2{
     width: 150%;
-    font-weight: 200;
-    font-size: 3rem;
+}
+
+.about{
+    padding: 10px;
+}
+
+.code{
+    position: absolute;
+    right: -10%;
+    height: 90%;
+    top: 10%;
 }
 
 .person{
@@ -104,16 +154,52 @@ div.section h1{
     text-align: center;
 }
 
-.left{
-    float: left;
-}
-
-.right{
-    float: right;
-}
-
 .person img{
     width: 200px;
+}
+
+.email_form{
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 0px 0 30px;
+}
+
+.email_form form *{
+    background: white;
+    box-shadow: none;
+    border: 1px solid gray;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 5px;
+    width: 80%;
+}
+
+.email_form form textarea{
+    height: 180px;
+}
+
+.email_form form input[type='submit']{
+    width: 100px;
+    position: absolute;
+    left: 30px;
+    bottom: -33px;
+}
+
+.email_form form input[type='submit']:hover{
+    left: 29px;
+    bottom: -32px;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.email_form form input[type='submit']:active{
+    left: 31px;
+    bottom: -34px;
+    border-left: 2px solid gray;
+    border-top: 2px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 footer{

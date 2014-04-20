@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Potato SoftWorks</title>
+<link href="Resources/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="title"><h1>Potato Softworks</h1></div>
+    </header>
+
+    <div id="aligner">
+        <div id="aligner2">
+
+            <div id="menu">
+                <a href="#page1" onClick="return containerMover(1);" id="link1">Company</a>
+                <a href="#page2" onClick="return containerMover(2);" id="link2">About</a>
+                <a href="#page3" onClick="return containerMover(3);" id="link3">People</a>
+                <a href="#page4" onClick="return containerMover(4);" id="link4">Contact</a>
+                <a><img src='Resources/logo.png' /></a>
+            </div>
+
+            <div id="viewer">
+                <div id="container">
+                    <div id="page1" class='page'>
+                        <h1>Super Software, Practical Price</h1>
+                        <img src='Resources/potato_hero.png' alt='potato hero' />
+                        <p>Delivering a premium product to your business is what we do. Never be disappointed with your e-solution ever again.</p>
+                    </div>
+    
+                    <div id="page2" class='page'>
+                        <h1>About Us</h1>
+                        <p>Founded in 2014, Potato SoftWorks is dedicated to bringing the best of technology to you, for a price you can afford.</p>
+                        <p>Set up by two Computer Science students from Christchurch, New Zealand, we believe that any technology is just one spark of brilliance from being created.</p>
+                        <p>We put our time, passion, and brilliance in to every product we sell. Let us care for your next website.</p>
+        
+                        <img src="Resources/devshot.png" />
+                    </div>
+    
+                    <div id="page3" class='page'>
+                        <h1>The Nerds Involved</h1>
+                        <div class='person'>
+                            <img src='Resources/kaleb.png' alt='Kaleb' />
+                            <p><h2>Kaleb McCall</h2>Founder of Potato SoftWorks, the savant of all things technology. Computer Science student at the University of Canterbury.</p>
+                        </div>
+                        <div class='person'>
+                            <img src='Resources/aaron.png' alt='Kaleb' />
+                            <p><h2>Aaron Stockdill</h2>Second in command, passionate about programming away from the normal. Computer Science and Mathematics student at the University of Canterbury.</p>
+                        </div>
+                    </div>
+
+                    <div id="page4" class='page'>
+                        <h1>Reaching Us</h1>
+                        <br />
+                        <div class='email_form left'>
+                            <h2>Send us an Email</h2>
+                            Integrated email forms: $30.
+                            <form name='contact_form' method='post' action='Resources/send_email.php'>
+                                <input name='name' type='text' placeholder="Name"/>
+                                <br />
+                                <input name='email' type='text' placeholder="email@provider.com"/>
+                                <br />
+                                <textarea name='message' placeholder='Write your message here'></textarea>
+                                <br />
+                                <input type='submit' value='Send'/>
+                            </form>
+                        </div>
+                        <div class='links right'>
+                            <h2>Other options...</h2>
+                            Facebook like button: $10.
+                            <p>
+                                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1443016575941912" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
+                            </p>
+                            Twitter Follow button: $10.
+                            <p>
+                                <a href="https://twitter.com/yourcompany" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @yourcompany</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            </p>
+                            Send us an email the old fashioned way: <br />
+                            <a href="mailto:test@123.com">you@yourcompany.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Website by <a href='http://www.potatosoftworks.com'>Potato SoftWorks</a>, 2014.
+    </footer>
+</body>
+<script src="Resources/mover.js"></script>
+</html>
