@@ -1,0 +1,306 @@
+@font-face{
+	font-family : "Quicksand_Light";
+	src: url('Quicksand_Light.woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html{
+	padding: 0;
+	margin: 0;
+	background: white;
+    min-height: 100%;
+    height: 100%;
+}
+
+body{
+/*    margin: 50px 0 0 0;*/
+    margin: 0;
+	padding: 0;
+	font-family: 'Quicksand_light', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 1.2em;
+	color: #444;
+    min-height: 100%;
+    height: 100%;
+}
+
+#container{
+	height: 100%;
+}
+
+a, a:active, a:visited{
+	color: black;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a:hover{
+	color: gray;
+}
+
+/* Setting Up the Menu */
+
+.menu{
+	width: 100%;
+	margin: 0 auto;
+	height: 25px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	padding: 0;
+	top: 0;
+	position: fixed;
+	background: white;
+	font-size: 16px;
+	z-index: 100;
+}
+
+.menu li{
+	width: 25%;
+	display: inline-block;
+	list-style: none;
+	display: inline-block;
+}
+
+.menu a{
+	text-decoration: none;
+}
+
+span.top, span.bottom, .current span.bottom{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 25px;
+	text-align: center;
+	padding-top: 5px;
+	border-radius: 2px;
+	-webkit-transition: top 0.2s ease;
+	-moz-transition: top 0.2s ease;
+	-ms-transition: top 0.2s ease;
+	-o-transition: top 0.2s ease;
+	transition: top 0.2s ease;
+}
+
+li:hover span.top, li:hover span.bottom{
+	top: -25px;
+}
+
+span.bottom{
+	background: #444;
+	color: white;
+}
+
+.current{
+	background: rgb(219,219,219);
+}
+
+/* Making the main content */
+
+h2, h3{
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-weight: 700;
+}
+
+#mainArea{
+	width: 100%;
+	position: relative;
+	height: 95%;
+	text-align: center;
+}
+
+.sectionOuter{
+	width: 100%;
+    height: 100%;
+	margin: 35px 0;
+	display: inline-block;
+	position: relative;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.sectionInner{
+	width: 500px;
+	padding: 30px 0;
+	height: 100%;
+	margin: 0 auto;
+	background: white;
+	position: relative;
+    overflow: auto;
+}
+
+@media only screen and (max-width: 560px){
+	.sectionInner{
+		width: 90%;
+	}
+	
+	#mainArea{
+		height: auto;
+	}
+}
+
+.sectionInner img{
+	float: right;
+	height: 200px;
+}
+
+/*Creating the Header */
+
+header{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	color: #444;
+}
+
+.sectionInner header img{
+	width: 80px;
+	height: 80px;
+	margin: 0px auto -5px auto;
+	display: block;
+	position: relative;
+    float: none;
+}
+
+header h1{
+	font-weight: 300;
+	font-size: 2.7em;
+	font-family: 'Quicksand_light', Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+/* Making Buttons */
+
+#buttons{
+	width: 120px;
+	height: 30px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	display: none;
+}
+
+.slideButton{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin: 10px 6px 0 6px;
+	position: relative;
+	z-index: 4;
+	top: -30px;
+	border: 1px solid #444;
+	border-radius: 30px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.arrow{
+	width: 0px;
+	height: 0px;
+	position:absolute;
+	display: none;
+	top: 50%;
+	z-index: 5;
+	opacity: 0.2;
+	border-top: 30px solid rgba(0,0,0,0);
+	border-bottom: 30px solid rgba(0,0,0,0);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+#left{
+	left: 15px;
+	border-right: 20px solid #444;
+	border-left: none;
+}
+
+#left:hover{
+	opacity: 1;
+}
+
+#right{
+	right: 15px;
+	border-left: 20px solid #444;
+	border-right: none;
+}
+
+#right:hover{
+	background-position: 20px 50%;
+	opacity: 1;
+}
+
+@media only screen and (max-width: 560px){
+	.arrow{
+		display: none;
+	}
+}
+
+/* Other */
+
+img.hero {
+    float: none;
+    height: 300px;
+}
+
+img.profile_pic{
+    height: 150px;
+}
+
+.person {
+    margin-top: 50px;
+}
+
+.email_form{
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 0px 0 0px;
+}
+
+.email_form form *{
+    background: white;
+    box-shadow: none;
+    border: 1px solid silver;
+    border-radius: 2px;
+    font-size: 1rem;
+    margin: 5px;
+    padding: 5px;
+    width: 80%;
+}
+
+.email_form form textarea{
+    height: 180px;
+}
+
+.email_form form input[type='submit']{
+    width: 100px;
+    position: absolute;
+    left: 40px;
+    bottom: -35px;
+}
+
+.email_form form input[type='submit']:hover{
+    left: -1px;
+    bottom: -39px;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+}
+
+.email_form form input[type='submit']:active{
+    left: 1px;
+    bottom: -41px;
+    border-left: 3px solid gray;
+    border-top: 3px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
