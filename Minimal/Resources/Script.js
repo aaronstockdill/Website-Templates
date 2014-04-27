@@ -1,8 +1,8 @@
 //Script.js
 //start homepage code
 var current = 0;
-var total = document.getElementsByClassName("sectionInner").length;
 var panels = document.getElementsByClassName("sectionOuter");
+var total = panels.length;
 var t;
 
 //Basic Setup
@@ -12,8 +12,7 @@ if(document.body.offsetWidth > 670){
 	document.getElementById("right").style.display = "block";
 	document.getElementById("left").style.display = "block";
 	for(i=0;i<total;i++){
-		var multiplier = 1;//(document.body.offsetWidth > 1000)? 0.6:0.8;
-		var left = (panels[i].offsetWidth * (i-current) * multiplier) + "px";
+		var left = (panels[i].offsetWidth * (i-current)) + "px";
 		panels[i].style.position = "absolute";
 		panels[i].style.left = left; //move into place
 		panels[i].style.opacity = "0"; //make invisible
@@ -23,14 +22,14 @@ if(document.body.offsetWidth > 670){
 //Create the Slider
 function change(input){
 	clearInterval(t); //reset 8s timer
-	
+    
 	if(input == "next"){
-		current = (current < total-1) ? current += 1 : 0; //go foreward
+		current = (current == (total - 1)) ? 0 : current + 1; // go forward
 	}
 	else if(input == "back"){
-		current = (current > 0) ? current-=1:(total - 1); //go back
+		current = (current > 0) ? current - 1 : total - 1; // go back
 	}
-	else if((typeof(input)=='number') && (input.toString().indexOf('.')==-1)){
+	else if((typeof(input)=='number') && (input.toString().indexOf('.')== -1)){
 		current = parseInt(input); //go to input
 	}
 	else{
@@ -38,22 +37,19 @@ function change(input){
 	}
 	
 	for(i=0;i<total;i++){
-		var multiplier = 1;//(document.body.offsetWidth > 1000)? 0.6:0.8;
-		var left = (panels[i].offsetWidth * (i-current) * multiplier) + "px";
+		var left = (panels[i].offsetWidth * (i - current)) + "px";
+        console.log(left, i - current);
 		panels[i].style.left = left; //move into place
 		panels[i].style.opacity = "0.2"; //make invisible
+        document.getElementsByClassName("slideButton")[i].style.background = "white"; //reset all buttons to blank
 	}
+    console.log("==============");
 	
 	panels[current].style.opacity = "1"; //Current becomes visible
-	
-	for(i=0;i<4;i++){ //reset all buttons to blank
-		document.getElementsByClassName("slideButton")[i].style.background = "white";
-	}
-	
-	document.getElementsByClassName("slideButton")[current].style.background = "#444"; //Move the slider
+	document.getElementsByClassName("slideButton")[current].style.background = "#444"; // Move the button slider
 	
 	setSpin(); //start the timer
-    window.location.hash = "section" + current; // Set the hash
+    window.location.hash = "sec" + current; // Set the hash
     
     return false;
 }
@@ -91,13 +87,13 @@ for(i=0;i<inputs.length;i++){
 if (window.location.hash){
     id = window.location.hash.slice(1);
     if (id == ""){
-        id = "section1";
+        id = "sec0";
     }
 } else {
-    id = "section1"
+    id = "sec0"
 }
-if (id.slice(0,7) == "section"){
-    id = id.slice(7);
+if (id.slice(0,3) == "sec"){
+    id = id.slice(3);
 }
 
 if(document.body.offsetWidth > 670){
