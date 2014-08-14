@@ -14,50 +14,43 @@
 
 <div id="container">
 
-    <!-- <header>
-        <img src="resources/logo.png" />
-        <h1>Potato SoftWorks</h1>
-    </header> -->
+    <header>
+        <img src="Resources/logo.png" />
+        <h1>Potato Softworks</h1>
+    </header>
     
+    <div class='menu-holder'>
     <ul class="menu">
         <li><a href="#section0" id="home" onClick="return change(0);">
-			<span class='top'>Company</span><span class='bottom'>Company</span>
+			Company
         </a></li><li><a href="#section1" id="portfolio" onClick="return change(1);">
-        	<span class='top'>About</span><span class='bottom'>About</span>
+        	About
         </a></li><li><a href="#section2" id="contact" onClick="return change(2);">
-         	<span class='top'>People</span><span class='bottom'>People</span>
+         	People
         </a></li><li><a href="#section3" id="blog" onClick="return change(3);">
-        	<span class='top'>Contact</span><span class='bottom'>Contact</span>
+        	Contact
         </a></li>
     </ul>
+    </div>
 	
 	<div id="mainArea">
 		<div id="left" class="arrow" onClick="change('back')"></div>
 		<div id="right" class="arrow" onClick="change('next')"></div>
 		<div id="section0" class="sectionOuter">
-			<div class="sectionInner">
-                <header>
-                    <img src="resources/logo.png" />
-                    <h1>Potato SoftWorks</h1>
-                </header>
 				<h2>Super Software, Practical Price</h2>
 				<p>Delivering a premium product to your business is what we do. Never be disappointed with your e-solution ever again.</p>
                 <img src='Resources/potato_hero.png' alt='potato hero' class='hero' />
-			</div>
 		</div>
 		
 		<div id="section1" class="sectionOuter">
-			<div class="sectionInner">
 				<h2>About Us</h2>
                 <p>Founded in 2014, Potato SoftWorks is dedicated to bringing the best of technology to you, for a price you can afford.</p>
                 <p>Set up by two Computer Science students from Christchurch, New Zealand, we believe that any technology is just one spark of brilliance from being created.</p>
                 <p>We put our time, passion, and brilliance in to every product we sell. Let us care for your next website.</p>
                 <img src='Resources/devshot.png' class='hero'/>
-			</div>
 		</div>
 		
 		<div id="section2" class="sectionOuter">
-			<div class="sectionInner">
 				<h2>The Nerds Involved</h2>
                 <div class='person'>
                     <img src='Resources/kaleb.png' alt='Kaleb' class='profile_pic' />
@@ -67,16 +60,14 @@
                     <img src='Resources/aaron.png' alt='Kaleb' class='profile_pic' />
                     <p><h3>Aaron Stockdill</h3>Second in command, passionate about programming away from the normal. Computer Science and Mathematics student at the University of Canterbury.</p>
                 </div>
-			</div>
 		</div>
 		
 		<div id="section3" class="sectionOuter">
-			<div class="sectionInner">
 				<h2>Reaching Us</h2>
-                <div class='email_form left'>
+                <div class='email_form'>
                     <h3>Send us an Email</h3>
                     Integrated email forms: $30.
-                    <form name='contact_form' method='post' action='Resources/send_email.php'>
+                    <form name='contact_form' method='post' action='Resources/send_email.php' id="contact_form">
                         <input name='name' type='text' placeholder="Name" class='input_field'/>
                         <br />
                         <input name='email' type='text' placeholder="email@provider.com" class='input_field'/>
@@ -86,34 +77,26 @@
                         <input type='submit' value='Send'/>
                     </form>
                 </div>
-                <div class='links right'>
+                <div class='links'>
                     <h3>Other options...</h3>
+                    <div class=left>
                     Facebook like button: $10.
                     <p>
                         <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1443016575941912" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
                     </p>
+                    </div>
+                    <div class='right'>
                     Twitter Follow button: $10.
                     <p>
                         <a href="https://twitter.com/yourcompany" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @yourcompany</a>
                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                     </p>
-                    Send us an email the old fashioned way: <br />
-                    <a href="mailto:test@123.com">you@yourcompany.com</a>
+                    </div>
+                    <br /><span class='middle'>Send us an email the old fashioned way:</span> <br />
+                    <a href="mailto:test@123.com" class='email'>you@yourcompany.com</a>
                 </div>
 			</div>
-		</div>
 	</div>
-	
-	<div id="buttons">
-        <span class="slideButton" onClick="change(0)"></span>
-		<span class="slideButton" onClick="change(1)"></span>
-		<span class="slideButton" onClick="change(2)"></span>
-		<span class="slideButton" onClick="change(3)"></span>
-	</div>	
-    
-</div>
-
-<script src="Resources/Script.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Gallery</title>
+        <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="Resources/style.css" type="text/css" media="screen" charset="utf-8">
+    </head>
+    <body>
+        <div class='container'>
+            <header>
+                <h1>Potato Softworks</h1>
+            </header>
+            <ul class='menu'>
+                     <li>Gallery
+                </li><li>About
+                </li><li>People
+                </li><li>Contact
+                     </li>
+            </ul>
+            <div class='gallery'>
+                <div id='focus'><img src='Photos/gallery1.jpg' /><span class='overlay'>The first image.</span></div>
+                <ul class='thumbnails'>
+                    <li><img class='thumb' src='Photos/gallery1_thumb.jpg' alt='The first image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery2_thumb.jpg' alt='The second image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery3_thumb.jpg' alt='The third image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery4_thumb.jpg' alt='The fourth image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery5_thumb.jpg' alt='The fifth image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery6_thumb.jpg' alt='The sixth image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery7_thumb.jpg' alt='The seventh image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery8_thumb.jpg' alt='The eighth image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery9_thumb.jpg' alt='The ninth image.' onclick='switch_pic(this);' /></li>
+                    <li><img class='thumb' src='Photos/gallery10_thumb.jpg' alt='The tenth image.' onclick='switch_pic(this);' /></li>
+                </ul>
+                <div class='clear'></div>
+            </div>
+        </div>
+        <footer>
+            &copy; Potato Softworks 2014
+        </footer>
+    </body>
+    <script>
+    function switch_pic(el) {
+        f = document.getElementById("focus")
+        f.getElementsByTagName('img')[0].src = el.src.replace("_thumb", "");
+        f.getElementsByTagName('span')[0].innerHTML = el.alt;
+    }
+    </script>
+</html>

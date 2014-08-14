@@ -29,6 +29,15 @@ function sanitize($input) {
     return $output;
 }
 
+function make_return($status)
+{
+    header('Content-Type: application/javascript; charset=utf8');
+    header('Access-Control-Allow-Origin: http://developer.potatosoftworks.com/');
+    header('Access-Control-Max-Age: 3628800');
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+    return "{\"result\" : \"".$status."\"}";
+}
+
 
 if (   isset($_POST['email'])
     && isset($_POST['name'])
@@ -40,95 +49,25 @@ if (   isset($_POST['email'])
 
     $send_to = "you@yourcompany.com";
     $url = "yourcompany.com";
-    $subject = "Form email from ".$_POST['name'];
+    $subject = $_POST['name']."emailed via form.";
     
-    $message_head = "Message from Web Form at $url by Potato SoftWorks\n".
-                    "From: ".$email."\nEmail: ".$email."\n\n";
+    $message_head = "Message from Web Form at $url by Potato Softworks\n".
+                    "Email: ".$email."\n\n";
     $message_foot = "\n\nSent at ".date(DATE_RFC2822).
-                    " by Potato SoftWorks email form.";
+                    " by Potato Softworks email form.";
     $message = $message_head.$message.$message_foot;
     
     $headers = 'From: '.$email_from."\n".
     'Reply-To: '.$email_from."\n" .
     'X-Mailer: PHP/' . phpversion();
-    @mail($send_to, $subject, $message, $headers);
-    
-    done();
+    try {
+        mail($send_to, $subject, $message, $headers);
+        echo make_return('success');
+    } catch (Exception $e){
+        echo make_return("failure");
+    }
     
 } else {
-    ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Potato SoftWorks</title>
-        <link rel="stylesheet" href="Resources/style.css">
-        <meta http-equiv="refresh" content="10;<?php echo $url ?>">
-    </head>
-    <body>
-        <header>
-            <ul id="menu">
-                <li><a href="#company">Company</a></li>
-                <li><a href="#about">About</a></li>
-                <li class='icon'><img alt='icon' src='Resources/logo.png' /></li>
-                <li><a href="#people">People</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </header>
-        <div class='section' id="company">
-            <h1>Oh no!</h1>
-            <br />
-            <img src='Resources/potato_hero.png' class='hero'>
-            <div class='overlay'>
-                <h2>Something went Horribly Wrong!</h2>
-                You must have entered some details wrong.<br /><br />
-                You'll be redirected in a few moments...
-            </div>
-        </div>
-        <footer>
-            Website by <a href='http://www.potatosoftworks.com'>Potato SoftWorks</a>, 2014.
-        </footer>
-    </body>
-    <script src="Resources/script.js"></script>
-</html>
-
-<?php
-}
-function done(){
-    ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Potato SoftWorks</title>
-        <link rel="stylesheet" href="Resources/style.css">
-        <meta http-equiv="refresh" content="10;<?php echo $url ?>">
-    </head>
-    <body>
-        <header>
-            <ul id="menu">
-                <li><a href="#company">Company</a></li>
-                <li><a href="#about">About</a></li>
-                <li class='icon'><img alt='icon' src='Resources/logo.png' /></li>
-                <li><a href="#people">People</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </header>
-        <div class='section' id="company">
-            <h1>Thanks!</h1>
-            <br />
-            <img src='Resources/potato_hero.png' class='hero'>
-            <div class='overlay'>
-                <h2>We've got your message!</h2>
-                Sit tight, and we'll get back to you as fast as we can. Thanks for getting in touch!<br /><br />
-                You'll be redirected in a few moments...
-            </div>
-        </div>
-        <footer>
-            Website by <a href='http://www.potatosoftworks.com'>Potato SoftWorks</a>, 2014.
-        </footer>
-    </body>
-    <script src="Resources/script.js"></script>
-</html>
-<?php
+    echo make_return('failure');
 }
 ?>
